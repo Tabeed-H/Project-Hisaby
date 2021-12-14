@@ -1,0 +1,131 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --fontf: "Josefin Sans", sans-serif;
+  --fontbold: 700;
+  --fontNormal: 400;
+  --fontSizeHeading: 42px;
+  --fontSizeNorm: 18px;
+  --fontSizeHero: 65px;
+  --colorMain: #004f77;
+}
+.test {
+  border: solid 2px red;
+}
+.container-spacing {
+  margin: 0 10vw 0 10vw;
+}
+.header-container {
+  height: 10vh;
+  background-color: var(--colorMain);
+}
+.header {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.inner-container-align {
+  width: 50%;
+  height: 100%;
+}
+.header-logo-container {
+  color: #fff;
+  font-family: var(--fontf);
+  font-weight: var(--fontbold);
+  font-size: var(--fontSizeHeading);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.action-button-container {
+  height: 60%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--fontf);
+  font-size: var(--fontSizeNorm);
+  font-weight: var(--fontNormal);
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+.button-login {
+  color: #000;
+  background-color: #fff;
+  margin-right: 2vw;
+}
+.button-signup {
+  background-color: #00b4d8;
+}
+.body-container {
+  height: 90vh;
+}
+.body {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.change-for-hero {
+  background-color: #00b4d8;
+  height: 10%;
+}
+
+.body-heading-container {
+  font-family: var(--fontf);
+  font-weight: var(--fontNormal);
+  font-size: var(--fontSizeHero);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.body-hero-text {
+  height: 50%;
+  width: 100%;
+}
+.body-hero-subtext {
+  font-size: var(--fontSizeNorm);
+  margin: 2vh 0 1.5vh 0;
+}
+.hero-text {
+  font-size: 99px;
+  color: #004f77;
+}
+.body-hero-btn {
+  background-color: #00b4d8;
+  color: #fff;
+  font-size: var(--fontSizeNorm);
+  width: 30%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  -ms-border-radius: 35px;
+  -o-border-radius: 35px;
+}
+.body-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
