@@ -1,0 +1,25 @@
+:root {
+  --fontf: "Josefin Sans", sans-serif;
+  --fontbold: 700;
+  --fontNormal: 400;
+  --fontSizeHeading: 42px;
+  --fontSizeNorm: 18px;
+  --fontSizeHero: 65px;
+  --colorMain: #004f77;
+}
+.header-button-container {
+  display: none;
+}
+.header-logo-container {
+  justify-content: flex-start;
+  width: 100%;
+}
+.error-container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.error-container > img {
+  height: 100%;
+}

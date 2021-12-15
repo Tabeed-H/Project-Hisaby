@@ -29,6 +29,7 @@ app.get("/", (req, res) => res.render("index"));
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
+app.get("*", (req, res) => res.render("404"));
 app.listen(PORT, (err) => {
   if (err) console.log(err);
   else console.log(`Server Running at PORT ${PORT}`);
