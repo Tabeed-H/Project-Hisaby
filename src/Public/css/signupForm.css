@@ -1,0 +1,17 @@
+.header-button-container {
+  display: none;
+}
+.header-logo-container {
+  justify-content: flex-start;
+  width: 100%;
+}
+.form-body-container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-body {
+  height: 80%;
+  width: 50%;
+}

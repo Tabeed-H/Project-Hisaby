@@ -16,16 +16,19 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // setting up public directory
-const pubDict = path.join(__dirname, "/public");
+const pubDict = path.join(__dirname, "/Public");
 app.use(express.static(pubDict));
 
-// setting up views
+// setting up viewscd..
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "/views"));
+app.set("views", path.join(__dirname, "views/layouts"));
+// hbs.registerPartials(path.join(__dirname, "/views/partials"));
 hbs.registerPartials(path.join(__dirname, "/views/partials"));
 
 app.get("/", (req, res) => res.render("index"));
-
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
 app.listen(PORT, (err) => {
   if (err) console.log(err);
   else console.log(`Server Running at PORT ${PORT}`);
