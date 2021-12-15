@@ -1,3 +1,12 @@
+:root {
+  --fontf: "Josefin Sans", sans-serif;
+  --fontbold: 700;
+  --fontNormal: 400;
+  --fontSizeHeading: 42px;
+  --fontSizeNorm: 18px;
+  --fontSizeHero: 65px;
+  --colorMain: #004f77;
+}
 .header-button-container {
   display: none;
 }
@@ -10,8 +19,73 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("/img/undraw_typewriter_re_u9i2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.form-body {
-  height: 80%;
-  width: 50%;
+.form-body-left {
+  height: 90%;
+  width: 30%;
+  background-color: rgba(0, 79, 119, 0.6);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
+  font-family: var(--fontf);
+  font-size: var(--fontSizeHero);
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.form-body-left > div {
+  margin-left: 2%;
+}
+.form-body-right {
+  height: 90%;
+  width: 70%;
+  background-color: rgba(233, 236, 239, 0.8);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontf);
+  font-size: var(--fontSizeNorm);
+  font-weight: var(--fontbold);
+}
+.form-title {
+  padding: 3% 0 3% 0;
+  width: 90%;
+}
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+input[type="text"] {
+  width: 70%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: 2px solid #00b4d8;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.form-btn {
+  width: 30%;
+  background-color: #00b4d8;
+  border: none;
+  color: #fff;
+  font-family: var(--fontf);
+  font-size: var(--fontSizeNorm);
+  font-weight: var(--fontbold);
+  padding: 2vh 0;
+  cursor: pointer;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }

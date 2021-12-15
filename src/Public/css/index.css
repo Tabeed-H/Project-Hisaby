@@ -64,12 +64,15 @@ body {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+  cursor: pointer;
 }
+
 .button-login {
   color: #000;
   background-color: #fff;
   margin-right: 2vw;
 }
+
 .button-signup {
   background-color: #00b4d8;
 }
@@ -123,8 +126,10 @@ body {
   -moz-border-radius: 35px;
   -ms-border-radius: 35px;
   -o-border-radius: 35px;
+  cursor: pointer;
 }
 .body-img-container {
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;

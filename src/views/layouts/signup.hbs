@@ -13,8 +13,24 @@
   </head>
   <body>
     {{>header}}
-    <div class="form-body-container container-spacing  test">
-      <div class="form-body test"></div>
+    <div class="form-body-container container-spacing">
+      <div class="form-body-left "><div>Let's <br> Get You <br> Started!</div></div>
+      <div class="form-body-right ">
+        <div class="form-title ">
+          Enter Some Details :
+        </div>
+        <form  class="signup-form ">
+          <label for="name">Name : </label>
+          <input type="text" id="name" placeholder="Enter Your Name" >
+          <label for="email">Email ID :</label>
+          <input type="text" id="email" placeholder="Enter Your Email">
+          <label for="password">Create a Password :</label>
+          <input type="text" id="password" placeholder="Password">
+          <label for="cpassword">Confirm Password :</label>
+          <input type="text" id="cpassword" placeholder="Confirm Password">
+          <button class="form-btn">Submit!</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
