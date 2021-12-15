@@ -13,6 +13,16 @@
 .header-logo-container {
   justify-content: flex-start;
   width: 100%;
+  animation-name: change;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.header-container {
+  animation-name: changebg;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 .error-container {
   height: 90vh;
@@ -22,4 +32,21 @@
 }
 .error-container > img {
   height: 100%;
+}
+
+@keyframes change {
+  from {
+    color: #ffff;
+  }
+  to {
+    color: #000;
+  }
+}
+@keyframes changebg {
+  from {
+    background-color: var(--colorMain);
+  }
+  to {
+    background-color: #ffff;
+  }
 }
