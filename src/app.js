@@ -25,10 +25,19 @@ app.set("views", path.join(__dirname, "views/layouts"));
 // hbs.registerPartials(path.join(__dirname, "/views/partials"));
 hbs.registerPartials(path.join(__dirname, "/views/partials"));
 
+// routes
+const userRoutes = require("./User/user.Routes");
+// using routes
+app.use(userRoutes);
+
 app.get("/", (req, res) => res.render("index"));
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
 app.get("*", (req, res) => res.render("404"));
 app.listen(PORT, (err) => {
   if (err) console.log(err);

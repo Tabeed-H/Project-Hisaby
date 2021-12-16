@@ -100,3 +100,41 @@ input[type="password"] {
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
 }
+.popup-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  background-color: rgba(233, 236, 239, 0.8);
+}
+.popup {
+  width: 40%;
+  height: 30%;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffff;
+  text-align: center;
+  font-family: var(--fontf);
+  font-weight: var(--fontNormal);
+  font-size: var(--fontSizeNorm);
+  background-color: var(--colorMain);
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+.timmer {
+  font-size: var(--fontSizeHero);
+}

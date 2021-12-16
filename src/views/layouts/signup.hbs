@@ -23,15 +23,23 @@
           <label for="name">Name : </label>
           <input type="text" id="name" placeholder="Enter Your Name" >
           <label for="email">Email ID :</label>
-          <input type="text" id="email" placeholder="Enter Your Email">
+          <input type="text" id="email" placeholder="Enter Your Email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$">
           <label for="password">Create a Password :</label>
-          <input type="password" id="password" placeholder="Password">
+          <input type="password" id="password" placeholder="Password" pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$">
           <label for="cpassword">Confirm Password :</label>
           <input type="password" id="cpassword" placeholder="Confirm Password">
           <button class="form-btn">Submit!</button>
         </form>
       </div>
     </div>
+    <div class="popup-container ">
+      <div class="popup ">
+        <p>You Are Being redirected to the login Page in <br><span class="timmer">5</span> Seconds!<br>
+        Please Stand-By!</p>
+      </div>
+    </div>
      <script src="/js/index.js"></script>
+     <script src="/js/signup.js"></script>
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
 </html>
