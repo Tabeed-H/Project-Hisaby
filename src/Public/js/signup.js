@@ -1,6 +1,5 @@
 const signUpFormBtn = document.querySelector(".form-btn");
 const popupWindow = document.querySelector(".popup-container");
-console.log(popupWindow.style.display);
 
 signUpFormBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -62,7 +61,7 @@ const submitForm = () => {
       startTimmer();
     })
     .catch((err) => {
-      console.log(err);
+      console.log(err.response);
       window.alert("Some Unknown Error Occured! \n Please Try Again Later!");
     });
 };

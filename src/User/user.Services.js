@@ -5,9 +5,13 @@ exports.doSignUp = async (req, res) => {
     const user = new User(req.body);
     await user.save();
 
-    res.status(200).send({ user, err: undefined });
+    const token = await user.generateToken();
+
+    res.cookie("jwt", token, {
+      httpOnly: true,
+    });
+    res.status(200).send({ user, token, err: undefined });
   } catch (err) {
-    // console.log(err);
     res.status(400).send({ data: undefined, err: err });
   }
 };
