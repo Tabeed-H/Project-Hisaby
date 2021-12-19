@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const Exp = require("../Exp/exp.Model");
 const userSchema = new mongoose.Schema({
   name: {
     required: true,
@@ -32,6 +33,12 @@ const userSchema = new mongoose.Schema({
       },
     },
   ],
+});
+
+userSchema.virtual("exp", {
+  ref: "Exp",
+  localField: "_id",
+  foreignField: "owner",
 });
 
 userSchema.methods.generateToken = async function () {
@@ -65,6 +72,10 @@ userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
     this.password = await bcrypt.hash(this.password, 8);
   }
+  next();
+});
+userSchema.pre("remove", async function (next) {
+  await Exp.deleteMany({ owner: this._id });
   next();
 });
 const User = mongoose.model("User", userSchema);
