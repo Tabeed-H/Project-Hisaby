@@ -9,10 +9,29 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/signupForm.css">
+    <link rel="stylesheet" href="/css/loginForm.css" />
     <title>Hisaby | Login</title>
 </head>
 <body>
     {{>header}}
-     <script src="/js/index.js"></script>
+  <div class="form-body-container container-spacing">
+      <div class="form-body-left "><div>Get<br> To Your<br> Account!</div></div>
+      <div class="form-body-right ">
+        <form  class="signup-form ">
+          <label for="email">Enter Email ID :</label>
+          <input type="text" id="email" placeholder="Enter Your Email">
+          <label for="password">Enter Password :</label>
+          <input type="password" id="password" placeholder="Password">
+          <button class="form-btn">Submit!</button>
+          <p class="label">Not Registered? <span class="anchor-lable">Sign-Up</span> Now!</p>
+        </form>
+      </div>
+    </div>
+
+
+    <script src="/js/index.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>
