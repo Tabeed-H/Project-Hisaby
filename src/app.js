@@ -37,6 +37,9 @@ app.get("/signup", (req, res) => {
 app.get("/login", (req, res) => {
   res.render("login");
 });
+app.get("/dashboard", (req, res) => {
+  res.render("dashboard");
+});
 
 app.get("*", (req, res) => res.render("404"));
 app.listen(PORT, (err) => {
