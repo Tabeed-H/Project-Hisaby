@@ -27,8 +27,10 @@ hbs.registerPartials(path.join(__dirname, "/views/partials"));
 
 // routes
 const userRoutes = require("./User/user.Routes");
+const expRoutes = require("./Exp/exp.Routes");
 // using routes
 app.use(userRoutes);
+app.use(expRoutes);
 
 app.get("/", (req, res) => res.render("index"));
 app.get("/signup", (req, res) => {
