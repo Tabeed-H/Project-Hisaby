@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const expSchema = new mongoose.Schema(
   {
-    titile: {
+    title: {
       type: String,
       required: true,
       maxlength: 10,
@@ -17,6 +17,10 @@ const expSchema = new mongoose.Schema(
     completed: {
       type: Boolean,
       default: false,
+    },
+    due: {
+      type: Date,
+      required: true,
     },
     owner: {
       type: mongoose.Schema.Types.ObjectId,
