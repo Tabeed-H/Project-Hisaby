@@ -1,7 +1,7 @@
 const User = require("../User/user.Model");
 const jwt = require("jsonwebtoken");
 
-exports.doAuth = function (req, res, next) {
+exports.doAuth = async function (req, res, next) {
   try {
     const token = req.header("Authorization").replace("Bearer", "");
     const decodedToken = jwt.verify(token, "sampleProject");
