@@ -13,25 +13,33 @@
   </head>
   <body>
       {{>header}}
+      <div class="welcom-line"></div>
 
       <div class="main-dashboard-container container-spacing ">
         <div class="dashboard-left dashboard-item loading" >
-          <div class="dashboard-left-item-1 dashboard-left-item "></div>
+          <div class="dashboard-left-item-1 dashboard-left-item ">
+            <div>Total Amount Due</div>
+            <div class="amout-due">0</div>
+          </div>
           <div class="dashboard-left-item-2 dashboard-left-item ">
             <div class="empty-spacer"></div>
             <div class="list-item "></div>
             <div class="list-item  "></div>
             <div class="list-item "></div>
           </div>
-          <div class="dashboard-left-item-3 dashboard-left-item  "></div>
+          <div class="dashboard-left-item-3 dashboard-left-item"><div>Add Expense</div></div>
         </div>
         <div class="dashboard-right dashboard-item animation-div">
           {{!-- <div>Upcomming: </div>
           <div class="exp-item test"></div> --}}
         </div>
+        <div class="user-action-btn loading">
+          <div class="user-logout-btn"> <img src="/img/logout.png" alt="logout" class="logout-img"></div>
+        </div>
       </div>
 
       <script src="/js/index.js"></script>
+      <script src="/js/dashboard.js"></script>
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
 </html>
