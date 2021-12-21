@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 
 exports.doAuth = async function (req, res, next) {
   try {
-    const token = req.header("Authorization").replace("Bearer", "");
+    const token = req.header("Authorization").replace("jwt=", "");
     const decodedToken = jwt.verify(token, "sampleProject");
 
     const user = await User.findOne({
