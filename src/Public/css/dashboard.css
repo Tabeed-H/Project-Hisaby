@@ -122,10 +122,13 @@
   background-color: var(--colorBG);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   overflow: hidden;
+}
+.dashboard-right > div:first-child {
+  margin-top: 5vh;
 }
 .user-action-btn {
   width: 5%;
@@ -135,26 +138,72 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
 }
+.user-action-btn:hover {
+  animation-name: changePos;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
 .logout-img {
   width: 35px;
   height: 35px;
   cursor: pointer;
+  margin-top: 2vh;
   margin-bottom: 2vh;
 }
 .dashboard-right > div {
   width: 90%;
   font-family: var(--fontf);
 }
+.exp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
 .exp-item {
-  height: 8vh;
+  width: 100%;
+  height: 7vh;
+  margin-top: 1vh;
   background-color: #fff;
-  z-index: 98;
+  /* z-index: 98; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.special-title {
+  background-color: #00b4d8;
+  font-weight: var(--fontbold);
+}
+.exp-item-title {
+  width: 50%;
+}
+.exp-item-amount {
+  width: 20%;
+  font-weight: var(--fontbold);
+  text-align: center;
+}
+.exp-item-due {
+  white-space: 20%;
+  text-align: center;
+}
+.exp-item-style {
+  font-family: var(--fontf);
+  font-size: var(--fontSizeNorm);
 }
 .animation-div::after {
   content: "";
@@ -162,7 +211,7 @@
   height: 100%;
   position: absolute;
   left: 0;
-  z-index: 99;
+  /* z-index: 99; */
   background-color: rgba(255, 255, 255, 0.8);
   filter: blur(18px);
   animation-name: load;
@@ -178,6 +227,108 @@
 }
 .loading {
   opacity: 0.5;
+}
+.addexp-form-container-back {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 1);
+  filter: opacity(95%);
+  width: 100vw;
+  height: 100vh;
+  -webkit-filter: opacity(95%);
+}
+.addexp-form-container {
+  height: 55vh;
+  width: 50vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #e9ecef;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  visibility: hidden;
+}
+.exp-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  height: 100%;
+  font-family: var(--fontf);
+  font-size: var(--fontSizeNorm);
+}
+input[type="text"] {
+  width: 70%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: 2px solid #00b4d8;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+input[type="date"] {
+  width: 70%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: 2px solid #00b4d8;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.exp-add-btn {
+  width: 30%;
+  background-color: #00b4d8;
+  border: none;
+  color: #fff;
+  font-family: var(--fontf);
+  font-size: var(--fontSizeNorm);
+  font-weight: var(--fontbold);
+  padding: 1.3vh 0;
+  cursor: pointer;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+.close-form-btn {
+  width: 50px;
+  height: 50px;
+  background-color: none;
+  border: none;
+  position: relative;
+  top: 5%;
+  right: -2%;
+}
+@keyframes changePos {
+  from {
+    background-color: var(--colorMain);
+    justify-self: flex-end;
+  }
+  to {
+    justify-content: flex-start;
+    background-color: rgb(250, 86, 86);
+  }
 }
 @keyframes load {
   from {
