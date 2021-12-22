@@ -5,7 +5,7 @@ const expSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      maxlength: 10,
+      maxlength: 20,
     },
     balance: {
       type: Number,
