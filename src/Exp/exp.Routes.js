@@ -9,4 +9,11 @@ router.post(
   async (req, res) => {}
 );
 
+router.get(
+  `${prefix}/getAll`,
+  _auth.doAuth,
+  _expence.doGetExp,
+  async (req, res) => {}
+);
+
 module.exports = router;
