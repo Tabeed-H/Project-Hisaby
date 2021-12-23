@@ -16,4 +16,17 @@ router.get(
   async (req, res) => {}
 );
 
+router.patch(
+  `${prefix}/markComplete`,
+  _auth.doAuth,
+  _expence.doMarkComplete,
+  async (req, res) => {}
+);
+
+router.post(
+  `${prefix}/delete`,
+  _auth.doAuth,
+  _expence.doDelete,
+  async (req, res) => {}
+);
 module.exports = router;

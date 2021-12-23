@@ -22,3 +22,23 @@ exports.doGetExp = async (req, res) => {
     res.status(400).send(err);
   }
 };
+
+exports.doMarkComplete = async (req, res) => {
+  try {
+    const exp = await Exp.findOne({ _id: req.body.expid });
+    exp.completed = true;
+    await exp.save();
+    res.status(200).send("completed");
+  } catch (err) {
+    res.status(400).send(err);
+  }
+};
+
+exports.doDelete = async (req, res) => {
+  try {
+    const exp = await Exp.findOneAndDelete({ _id: req.body.expid });
+    res.status(200).send("Deleted");
+  } catch (err) {
+    res.status(400).send(err);
+  }
+};

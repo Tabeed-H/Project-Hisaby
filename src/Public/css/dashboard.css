@@ -8,6 +8,25 @@
   --colorMain: #004f77;
   --colorBG: #e9ecef;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .header-button-container {
   display: none;
 }
@@ -86,16 +105,25 @@
   -o-border-radius: 30px;
 }
 .list-item {
-  width: 90%;
+  width: 85%;
   height: 6vh;
   margin-bottom: 3vh;
   background-color: #fff;
   overflow: hidden;
+  font-family: var(--fontf);
+  font-size: var(--fontSizeNorm - 3px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+}
+.list-item > di .list-item-style {
+  font-weight: var(--fontbold);
 }
 .empty-spacer {
   width: 90%;
@@ -118,6 +146,8 @@
   -o-border-radius: 30px;
 }
 .dashboard-right {
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   width: 60%;
   background-color: var(--colorBG);
   display: flex;
@@ -164,11 +194,8 @@
   font-family: var(--fontf);
 }
 .exp-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   width: 100%;
+  overflow-y: scroll;
 }
 .exp-item {
   width: 100%;
@@ -185,12 +212,20 @@
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
+.exp-item-checkbox {
+  width: 20px;
+  height: 20px;
+}
+.exp-item-checkbox > img {
+  width: 100%;
+  height: 100%;
+}
 .special-title {
   background-color: #00b4d8;
   font-weight: var(--fontbold);
 }
 .exp-item-title {
-  width: 50%;
+  width: 45%;
 }
 .exp-item-amount {
   width: 20%;
@@ -202,8 +237,13 @@
   text-align: center;
 }
 .exp-item-style {
+  /* border: solid 2px red; */
   font-family: var(--fontf);
   font-size: var(--fontSizeNorm);
+}
+.exp-item-completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 .animation-div::after {
   content: "";

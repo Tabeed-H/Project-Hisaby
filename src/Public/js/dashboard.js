@@ -12,6 +12,55 @@ const addExpBackground = document.querySelector(".addexp-form-container-back");
 const addExpForm = document.querySelector(".addexp-form-container");
 const postExpFormBtn = document.querySelector(".exp-add-btn");
 
+const doMarkComplete = function (ele) {
+  const obj = {
+    expid: ele.parentNode.dataset.expid,
+  };
+  axios
+    .patch(
+      `${window.location.origin}/api/v1/user/expences/markComplete`,
+      JSON.stringify(obj),
+      {
+        headers: {
+          "content-type": "application/json",
+          withCredentials: true,
+          Authorization: document.cookie,
+        },
+      }
+    )
+    .then((res) => {
+      getUserExp();
+    })
+    .catch((err) => {
+      console.log(err.response);
+    });
+};
+
+const doDeleteExp = function (ele) {
+  const obj = {
+    expid: ele.parentNode.dataset.expid,
+  };
+  axios
+    .post(
+      `${window.location.origin}/api/v1/user/expences/delete`,
+      JSON.stringify(obj),
+      {
+        headers: {
+          "content-type": "application/json",
+          withCredentials: true,
+          Authorization: document.cookie,
+        },
+      }
+    )
+    .then((res) => {
+      // console.log(res);
+      getUserExp();
+    })
+    .catch((err) => {
+      console.log(err.response);
+    });
+};
+
 const doFetchUser = function () {
   axios
     .post(
@@ -95,19 +144,34 @@ const closeExpForm = function () {
 };
 
 const clearExpForm = function () {
-  expTitle.value = "";
-  expAmount.value = "";
-  expDue.value = "";
+  // expTitle.value = "";
+  // expAmount.value = "";
+  // expDue.value = "";
+  document.querySelector(".exp-form").reset();
 };
 
 const printExpOnScreen = function (res) {
   const expContainer = document.querySelector(".exp-container");
   expContainer.innerHTML = "";
+  let completeExp = [],
+    notCompletedExp = [];
   res.forEach((ele) => {
-    const html = `<div class="exp-item ">
+    if (ele.completed) {
+      completeExp.push(ele);
+    } else {
+      notCompletedExp.push(ele);
+    }
+  });
+  const allExp = [...notCompletedExp, ...completeExp];
+  allExp.forEach((ele) => {
+    const html = `<div class="exp-item ${
+      ele.completed ? "exp-item-completed" : ""
+    }" data-expId=${ele._id}>
+    <div class="exp-item-checkbox exp-item-style" onclick="doMarkComplete(this)"><img src="/img/checkbox.png" alt="checkbox"></div>
     <div class="exp-item-title exp-item-style ">${ele.title}</div>
     <div class="exp-item-amount exp-item-style  ">Rs ${ele.balance}</div>
     <div class="exp-item-due  exp-item-style " >${ele.due.split("T")[0]}</div>
+    <div class="exp-item-checkbox exp-item-style" onclick="doDeleteExp(this)"><img src="/img/cancel.png" alt="delete"></div>
   </div>`;
     expContainer.insertAdjacentHTML("beforeend", html);
   });
@@ -145,12 +209,12 @@ const sendExpForm = function (res) {
     )
     .then((res) => {
       window.alert(`Added!`);
+      clearExpForm();
     })
     .catch((err) => {
+      console.log(err.response);
       window.alert(`Something Went Wrong!`);
     });
-
-  clearExpForm();
 };
 
 const doLogout = function () {
