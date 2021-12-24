@@ -1,5 +1,12 @@
 const mongoose = require("mongoose");
 
+// Expense Model
+// @title     : String
+// @balance   : Number
+// @completed : Boolean
+// @due       : Date
+// @owner     : Object ID (refrence to the user owner)
+// TimeStamp
 const expSchema = new mongoose.Schema(
   {
     title: {
@@ -10,6 +17,7 @@ const expSchema = new mongoose.Schema(
     balance: {
       type: Number,
       required: true,
+      // Validate the amount entered
       validate(val) {
         if (val <= 0) throw new Error(`Enter Some Amount`);
       },
@@ -31,5 +39,6 @@ const expSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// Export Expense Model
 const Exp = mongoose.model("Exp", expSchema);
 module.exports = Exp;

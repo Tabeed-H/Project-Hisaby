@@ -110,12 +110,10 @@ const getUserExp = function () {
       },
     })
     .then((res) => {
-      // console.log(res);
       printExpOnScreen(res.data);
     })
     .catch((err) => {
-      // console.log(err.response);
-      window.alert(`Something Went Wrong!`);
+      window.alert(`Something Went Wrong!\n${err.response.data.message}`);
     });
 };
 
@@ -212,8 +210,7 @@ const sendExpForm = function (res) {
       clearExpForm();
     })
     .catch((err) => {
-      console.log(err.response);
-      window.alert(`Something Went Wrong!`);
+      window.alert(`Something Went Wrong!\n${err.response.data.message}`);
     });
 };
 
