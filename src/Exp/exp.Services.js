@@ -4,6 +4,7 @@ const Exp = require("../Exp/exp.Model");
  * Function : doAdd
  * Adds a new Expense and saves the same on the DB
  * @param  {JSON}         req.body contains the details that has to be added
+ * @param  {*}  res
  * Success
  * @return {HTTP-Status}  201-Created
  * @return {JSON}         Added Expense JSON Object
@@ -26,6 +27,7 @@ exports.doAdd = async (req, res) => {
  * Function : doGetExp
  * Gets all the Expense of a Authorized User and Populates them on the exp Field of the User
  * @param   {JSON} req.User From the Authorization middleware
+ * @param  {*}  res
  * Success
  * @return  {HTTP-Status}   200-OK
  * @return  {JSON}          req.user.exp  JSON Object
@@ -50,6 +52,7 @@ exports.doGetExp = async (req, res) => {
  * Function : doMarkComplete
  * Marking a Expense as Complete by changing the exp.completed field
  * @param {Mongo Object ID} req.body.expId  ID of the Expense
+ * @param  {*}  res
  * Success
  * @return  {HTTP-Status}   200=OK
  * Error
@@ -71,6 +74,7 @@ exports.doMarkComplete = async (req, res) => {
  * Function : doDelete
  * Deletes a Expense
  * @param {Mongo Object ID} req.body.expid  ID of the Expense
+ * @param  {*}  res
  * Success
  * @return {HTTP-Status}    200-OK
  * Error
