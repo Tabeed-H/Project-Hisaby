@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
-
-// Expense Model
-// @title     : String
-// @balance   : Number
-// @completed : Boolean
-// @due       : Date
-// @owner     : Object ID (refrence to the user owner)
-// TimeStamp
+/**
+ * Expense Model
+ * @title       {String}
+ * @balance     {Number}
+ * @completed   {Boolean}
+ * @due         {Date}
+ * @owner       {Object ID}
+ */
 const expSchema = new mongoose.Schema(
   {
     title: {
