@@ -58,8 +58,9 @@ signUpFormBtn.addEventListener("click", (e) => {
  * Makes an API call to signup (if validated)
  * @param {*} none
  * Success
- *
+ * Redirects to login window
  * Error
+ * Shows Error
  */
 const submitForm = () => {
   // Creates an object
