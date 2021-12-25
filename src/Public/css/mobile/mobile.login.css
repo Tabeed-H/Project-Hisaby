@@ -1,0 +1,55 @@
+@media only screen and (max-width: 600px) {
+  :root {
+    --fontf: "Josefin Sans", sans-serif;
+    --fontbold: 700;
+    --fontNormal: 400;
+    --fontSizeHeading: 32px;
+    --fontSizeNorm: 14px;
+    --fontSizeHero: 42px;
+    --colorMain: #004f77;
+  }
+  .container-spacing {
+    margin: 0 10vw 0 10vw;
+  }
+  .header-logo-container {
+    justify-content: center;
+  }
+  .form-body-container {
+    height: 70vh;
+    margin-top: 5vh;
+    flex-direction: column;
+  }
+  .form-body-left {
+    height: 30%;
+    width: 100%;
+    justify-content: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0;
+    font-size: var(--fontSizeHeading);
+  }
+  .form-body-left > div {
+    margin-left: 0;
+  }
+  .form-body-right {
+    justify-content: flex-start;
+    height: 90%;
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  .signup-form {
+    width: 90%;
+    margin-top: 5vh;
+  }
+  input[type="text"] {
+    width: 80%;
+  }
+  input[type="password"] {
+    width: 80%;
+  }
+  .form-btn {
+    width: 50%;
+  }
+}

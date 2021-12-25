@@ -1,0 +1,57 @@
+@media only screen and (max-width: 600px) {
+  :root {
+    --fontf: "Josefin Sans", sans-serif;
+    --fontbold: 700;
+    --fontNormal: 400;
+    --fontSizeHeading: 38px;
+    --fontSizeNorm: 14px;
+    --fontSizeHero: 48px;
+    --colorMain: #004f77;
+  }
+  .container-spacing {
+    margin: 0 10vw 0 10vw;
+  }
+  .form-body-container {
+    height: 80vh;
+    margin-top: 2vh;
+    flex-direction: column;
+  }
+  .form-body-left {
+    height: 30%;
+    width: 100%;
+    justify-content: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0;
+    font-size: var(--fontSizeHeading);
+  }
+  .form-body-left > div {
+    margin-left: 0;
+  }
+  .header-logo-container {
+    justify-content: center;
+  }
+  .form-body-right {
+    height: 90%;
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+  input[type="password"] {
+    width: 100%;
+  }
+  .form-btn {
+    width: 50%;
+  }
+  .popup {
+    width: 50%;
+    height: 40%;
+  }
+  .timmer {
+    font-size: var(--fontSizeHeading);
+  }
+}

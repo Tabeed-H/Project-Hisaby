@@ -9,14 +9,15 @@
     />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/mobile/mobile.dashboard.css">
     <title>Hisaby | Dashboard</title>
   </head>
   <body>
       {{>header}}
       <div class="welcom-line"></div>
 
-      <div class="main-dashboard-container container-spacing ">
-        {{>userDashboardRight}}
+      <div class="main-dashboard-container container-spacing">
+        {{>userDashboardLeft}}
         {{>userDashboardListContainer}}
         {{>userDashboardLogout}}
       </div>

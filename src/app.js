@@ -10,7 +10,7 @@ const db = require("./db/dbConnection");
 const app = express();
 
 // Server config
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5500;
 
 // json content
 app.use(express.json());
@@ -44,7 +44,7 @@ app.get("/dashboard", (req, res) => {
 });
 
 app.get("*", (req, res) => res.render("404"));
-app.listen(PORT, (err) => {
+app.listen(PORT, "192.168.43.22", (err) => {
   if (err) console.log(err);
   else console.log(`Server Running at PORT ${PORT}`);
 });
