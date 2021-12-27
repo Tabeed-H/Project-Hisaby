@@ -22,3 +22,7 @@ signUpBtn.forEach((btn) =>
     window.location.assign(`${window.location.origin}/signup`);
   })
 );
+
+window.alert(
+  `Important!:\nThis is a Sample Project\nDonot Enter Any Personel Information`
+);
